@@ -1,0 +1,155 @@
+<%@ page contentType="text/html;charset=utf-8" %>
+<style>
+select{
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 6px 7px;
+    width: 450px;
+    font-size: 14px;
+    font-weight: 700;
+}
+select:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+button{
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 6px 7px;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: 500;
+}
+button:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+input{
+    background-color:rgb(230, 238, 214);
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 6px 7px;
+    width: 150px;
+    font-size: 14px;
+    font-weight: 700;
+}
+input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+body {
+    background-image: url(./images/Bubbles.png);
+    background-size: 100% 100%;
+}
+ul {
+	width:100%;
+	display:table;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+li {
+	width:10%;
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.active {
+    color: white;
+    background-color: #4CAF50;
+}
+/* Border styles */
+#table-3 thead, #table-3 tr {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(235, 242, 224);
+    }
+#table-3 {
+    margin: 10px auto;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(235, 242, 224);
+    }
+
+/* Padding and font style */
+#table-3 td, #table-3 th {
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: Verdana;
+    color: rgb(149, 170, 109);
+    }
+
+/* Alternating background colors */
+#table-3 tr:nth-child(even) {
+    background: rgb(230, 238, 214)
+    }
+#table-3 tr:nth-child(odd) {
+    background: rgb(230, 238, 214)
+    }
+.btn {
+    width: 270px; /* 宽度 */
+    height: 40px; /* 高度 */
+    border-width: 0px; /* 边框宽度 */
+    border-radius: 4px; /* 边框半径 */
+    background: rgb(149, 170, 109); /* 背景颜色 */
+    cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+    outline: none; /* 不显示轮廓线 */
+    font-family: Microsoft YaHei; /* 设置字体 */
+    color: white; /* 字体颜色 */
+    font-size: 17px; /* 字体大小 */
+    }
+.btn:hover {
+    background: rgb(149, 170, 190);
+    }
+</style>
+
+<ul id="menu">
+  <li><a href="index.jsp">主页</a></li>
+  <li><a href="inputRegisterMess.jsp">注册</a></li>
+  <li><a href="login.jsp">登录</a></li>
+  <li><a href="lookMobile.jsp">浏览手机</a></li>
+  <li><a href="searchMobile.jsp">查询手机</a></li>
+  <li><a href="lookShoppingCar.jsp">查看购物车</a></li>
+  <li><a href="lookOrderForm.jsp">查看订单</a></li>
+  <li><a href="changeRegisterMess.jsp">修改注册信息</a></li>
+  <li><a href="changePassword.jsp">修改密码</a></li>
+  <li><a href="Exit.jsp">退出</a></li>
+</ul>
+<script type="text/javascript">
+    var nav = document.getElementById("menu");
+    var links = nav.getElementsByTagName("li");
+    var lilen = nav.getElementsByTagName("a");
+    var currenturl = document.location.href;
+    for (var i=0;i<links.length;i++)
+    {
+        var linkurl = lilen[i].getAttribute("href");
+        if(currenturl.indexOf(linkurl)!=-1)
+        {
+            links[i].className = "active";
+        }
+    }
+</script>
